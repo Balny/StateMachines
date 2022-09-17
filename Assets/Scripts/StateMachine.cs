@@ -35,14 +35,12 @@ public class StateMachine : MonoBehaviour
     {
         if (other.name == "WaterTrigger")
         {
-            Debug.Log("Swimming");
             currentState = State.swimming;
 
         }
         else if (other.name == "MountainTrigger")
         {
             currentState = State.climbing;
-            Debug.Log("Climbing");
 
         }
     }
@@ -68,7 +66,6 @@ public class StateMachine : MonoBehaviour
         if (lastPos != transform.position)
         {
             currentState = State.walking;
-            Debug.Log("Walking");
         }
         lastPos = transform.position;
 
@@ -79,7 +76,6 @@ public class StateMachine : MonoBehaviour
         if (lastPos == transform.position)
         {
             currentState = State.idle;
-            Debug.Log("Idle");
         }
         lastPos = transform.position;
     }
